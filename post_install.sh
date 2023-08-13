@@ -8,7 +8,9 @@ HOME_FLDR="/usr/local/etc/syncthing"
 sysrc -f /etc/rc.conf syncthing_enable="YES"
 
 syncthing generate --gui-user=$USER --gui-password=$PASS --no-default-folder --home=$HOME_FLDR
+sed -i '' 's|name="Syncthing"|name="TrueNAS"|g' $HOME_FLDR/config.xml
 sed -i '' 's|<address>127.0.0.1:8384</address>|<address>0.0.0.0:8384</address>|g' $HOME_FLDR/config.xml
+sed -i '' 's|<theme>default</theme>|<theme>dark</theme>|g' $HOME_FLDR/config.xml
 chown -R syncthing:syncthing $HOME_FLDR
 
 mkdir /data
