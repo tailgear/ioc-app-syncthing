@@ -13,8 +13,8 @@ sed -i '' 's|<address>127.0.0.1:8384</address>|<address>0.0.0.0:8384</address>|g
 sed -i '' 's|<theme>default</theme>|<theme>dark</theme>|g' $HOME_FLDR/config.xml
 chown -R syncthing:syncthing $HOME_FLDR
 
-mkdir /data
-chown syncthing:syncthing /data
+mkdir /media/data
+chown syncthing:syncthing /media/data
 
 echo "Syncthing Configuration:" > /root/PLUGIN_INFO
 echo "• GUI User: ${USER}" >> /root/PLUGIN_INFO
